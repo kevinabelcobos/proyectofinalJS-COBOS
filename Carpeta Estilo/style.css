@@ -1,0 +1,11 @@
+body {
+  background-image: url(../Img/masterchefbl.webp);
+  background-position: center, cover;
+  background-size: cover;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+}
+

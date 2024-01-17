@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="Carpeta Estilo/style.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+
+<body>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 text-center">
+        <div class="div-form">
+          <table id="tabladeconsultas">
+            <h1>Consultas realizadas</h1>
+            <thead class="form-t">
+              <tr>
+                <th>Id consulta</th>
+                <th>Nombre</th>
+                <th>Consultas</th>
+              </tr>
+            </thead>
+            <tbody id="consultasRealizadas"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-md-6 text-end">
+        <div class="div-form">
+          <h1 class="form-t">DEJANOS TU CONSULTA</h1>
+
+          <form id="form">
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombre" aria-describedby="Ingrese su nombre">
+            </div>
+            <div class="mb-3">
+              <label for="apellido" class="form-label">Apellido</label>
+              <input type="text" class="form-control" id="apellido">
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="email">Ingrese su email</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="consulta">Ingrese su consulta</label>
+              <textarea class="form-control" id="consulta" rows="3"></textarea>
+
+            </div>
+
+            <div class="mb-3 col-md-12">
+              <button type="submit" class="btn btn-primary col-md-5">Enviar</button>
+              <button type="reset" class="btn btn-danger col-md-5">Resetear</button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+  crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="codigo.js"></script>
+</body>
+
+</html>
