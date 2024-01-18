@@ -51,14 +51,13 @@ async function handleSubmit(event) {
 
   const response = await fetch(this.action, {
     method: this.method,
-    body: form, 
+    body: form,
     headers: {
       'Accept': 'application/json'
     }
   })
-  console.log("aca3");
-  console.log(response);
-  if (response.ok){
+
+  if (response.ok) {
     Toastify({
       text: "Consulta enviada con exito",
       duration: 3000,
