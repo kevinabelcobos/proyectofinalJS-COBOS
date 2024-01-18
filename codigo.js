@@ -4,7 +4,7 @@ Swal.fire({
   width: '50%',
 });
 
-const formPaciente = document.getElementById('form');
+const formConsulta = document.getElementById('form');
 
 var nombreInput = document.getElementById("nombre").value;
 var consultaInput = document.getElementById("consulta").value;
@@ -35,50 +35,43 @@ function llenarTabla(array1) {
   });
 }
 
-function enviarConsulta(e) {
+formConsulta.addEventListener('submit', handleSubmit);
+
+async function handleSubmit(event) {
+
   var nombreInput = document.getElementById("nombre").value;
   var consultaInput = document.getElementById("consulta").value;
-  e.preventDefault();
-  console.log("aca");
+
+  event.preventDefault();
+
   nombres.push(nombreInput);
   consulta.push(consultaInput);
 
-  Swal.fire({
-    title: '¿Desea enviar la consulta?',
-    icon: 'info',
-    showCancelButton: true,
-    confirmButtonText: 'Aceptar',
-    confirmButtonColor: '#0d6efd',
-}).then((result) => {
+  const form = new FormData(this);
 
-
-    if (result.isConfirmed) {
-    
-        Toastify({
-            text: "Consulta enviada con exito",
-            duration: 3000,
-            close: true,
-            gravity: "bottom",
-            position: "right", 
-            stopOnFocus: true, 
-            style: {
-              background: "green",
-            },
-          }).showToast();
-
-          limpiarFormulario(formPaciente);
-          llenarTabla(nombres);
+  const response = await fetch(this.action, {
+    method: this.method,
+    body: form, 
+    headers: {
+      'Accept': 'application/json'
     }
+  })
+  console.log("aca3");
+  console.log(response);
+  if (response.ok){
+    Toastify({
+      text: "Consulta enviada con exito",
+      duration: 3000,
+      close: true,
+      gravity: "bottom",
+      position: "right",
+      stopOnFocus: true,
+      style: {
+        background: "green",
+      },
+    }).showToast();
 
-})
-
+    limpiarFormulario(formConsulta);
+    llenarTabla(nombres);
+  }
 }
-
-
-
-
-
-
-
-formPaciente.addEventListener("submit", enviarConsulta);
-
